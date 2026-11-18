@@ -124,7 +124,10 @@ int main(int argc,char **argv)
         if      (!strcmp(argv[i],"-k")&&i+1<argc) {
             conffile=argv[++i];
             resetsysopts();
-            if (!loadopts(conffile,sysopts)) return EXIT_FAILURE;
+            if (!loadopts(conffile,sysopts)) {
+                fprintf(stderr,"error: cannot open conf %s\n",conffile);
+                return EXIT_FAILURE;
+            }
             getsysopts(&prcopt,&solopt,&filopt);
         }
         else if (!strcmp(argv[i],"-ic")&&i+1<argc) strcpy(insconffile,argv[++i]);
