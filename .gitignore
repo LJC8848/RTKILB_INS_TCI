@@ -1,0 +1,28 @@
+# Build outputs - regenerate with:  cmake -S . -B build   then  cmake --build build --config RelWithDebInfo
+bin/
+build/
+src/bin/
+src/lib/
+.vs/
+CMakeCache.txt
+CMakeFiles/
+
+# Compiler / linker by-products
+*.dll
+*.obj
+*.o
+*.pdb
+*.ilk
+*.exp
+*.suo
+*.user
+
+# Post-processing run by-products (traces reach ~1 GB)
+*.trace
+*.pos
+*.ins
+*.ins.*
+*.flt
+*.kml
+*.log
+conf.zip
